@@ -5,11 +5,12 @@ This project outlines the design of a driver circuit for a CRT screen. The tube 
 
 ## Tube Power Supply
 To power the CRT, several kilovolts must be provided to accelerate the electron beam. This is typically provided by a flyback transformer. As mentioned previously, the tube used in this project came with a transformer.
-To drive the flyback transformer, a sinusoidal AC signal is approximated the square wave generated with a monostable multivibrator.
+To drive the flyback transformer, a sinusoidal AC signal is approximated using a square wave generated with a monostable multivibrator.
 This approach is not efficient, but it is sufficient for the size of the tube and is relatively simple.
 
 ## Circuit Schematic
-[<img src="hardware/schematic.png">]
+<img src="hardware/schematic.png">
+*Datasheets are provided in the datasheets directory.
 
 ## Coil Driver
 The coils of the CRT are responsible for the rendering.
