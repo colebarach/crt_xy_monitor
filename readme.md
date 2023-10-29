@@ -1,9 +1,15 @@
 # CRT Vector Display Driver
 
 ## Overview
+
 This project outlines the design of a driver circuit for a CRT screen. The tube used in this project is a 4" magnetic coil driven screen from a GE portable TV. No information could be found online about this tube, so the pinout of it and its corresponding flyback had to be reverse engineered. 
 
+### Notes
+
+This repository details the design and creation of an X-Y monitor. For details on generating X-Y signals to display, see the sister repository (https://github.com/colebarach/lib_xy_display).
+
 ## Tube Power Supply
+
 To power the CRT, several kilovolts must be provided to accelerate the electron beam. This is typically provided by a flyback transformer. As mentioned previously, the tube used in this project came with a transformer.
 To drive the flyback transformer, a sinusoidal AC signal is approximated using a square wave generated with a monostable multivibrator.
 This approach is not efficient, but it is sufficient for the size of the tube and is relatively simple.
@@ -24,8 +30,6 @@ The voltage of this, proportional to the current, is used as the negative feedba
 
 ## Generating X-Y Signals
 Any device capable of generating two analog signals can be used with this driver, as long as the pre-amplifiers are capable of bringing it within range. The most accessible device which can do this is the audio output of a computer. The right and left channels can be mapped to X-Y (or vice versa) and images can be drawn. A tool known as "Rabiscoscopio" has been designed for this exact purpose (see Alex Porto's link below). Using Rabiscoscopio svg files can be converted to audio files and played. Several demos are also available for quick testing.
-
-It is the goal of this project to use a microcontroller to generate these signals, although this is still a work in progress. In this repository are multiple files for the Arduino IDE which generate basic X-Y output. While the Arduino ATMEGA cannot generate pure analog signals, it can generate PWM signals which may be filtered using an RC filter. While this has its disadvantages, it is an accessible alternative to using a higher end microcontroller which generates these signals directly.
 
 ## References
 - Cathode-Ray Tubes - Chuck DeVere (https://openlibrary.org/books/OL17878693M/Cathode-ray_tubes)
